@@ -3,8 +3,8 @@ import { Button, Form, Input } from 'antd';
 import './admin_login.css'
 
 const AdminLogin = ()=>{
-    const onFinish = (values) => {
-        console.log('Received values of form: ', values);
+    const onFinish = (values: string) => {
+      console.log('Received values of form: ', values);
     };
 
     return (

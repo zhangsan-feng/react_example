@@ -1,4 +1,4 @@
-import {HttpGet,HttpServerAddress } from './request.ts'
+import {HttpGet,HttpServerAddress } from './request.js'
 const HttpRouterMatchV1 = ""
 const HttpRouterUrl = `${HttpServerAddress}${HttpRouterMatchV1}`
 

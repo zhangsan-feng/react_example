@@ -52,3 +52,7 @@
 .ant-layout-sider{
     background: rgba(0, 0, 0, 0) !important;
 }
+
+.ant-tabs-ink-bar {
+    display: none !important;
+}

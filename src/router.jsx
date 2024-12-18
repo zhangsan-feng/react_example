@@ -1,11 +1,12 @@
-import {createBrowserRouter} from 'react-router-dom'
+import {createBrowserRouter, RouteObject} from 'react-router-dom'
 import AdminHome from "./admin/admin_home/admin_home.jsx";
-import Customer from "./admin/customer.jsx";
+import Customer from "./admin/component/customer.jsx";
 import AdminLogin from './admin/admin_login/admin_login.jsx'
-import Test1 from "./admin/test1.jsx";
-import Test2 from "./admin/test2.jsx";
+import Test1 from "./admin/component/test1.jsx";
+import Test2 from "./admin/component/test2.jsx";
 
-const httpRouter = new createBrowserRouter([
+
+const route:RouteObject[] = [
     {
         path: "/login",
         element: <AdminLogin/>    ,
@@ -29,8 +30,6 @@ const httpRouter = new createBrowserRouter([
             }
         ]
     },
-
-
-])
-
+]
+const httpRouter =  createBrowserRouter(route)
 export  default httpRouter

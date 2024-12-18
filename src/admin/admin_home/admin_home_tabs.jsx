@@ -3,9 +3,6 @@ import { Tabs } from 'antd';
 import { useLocation, useNavigate, useOutlet } from 'react-router-dom';
 
 
-
-
-
 const AdminHomeTabs = () => {
     const [activeKey, setActiveKey] = useState('');
     const [items, setItems] = useState([]);
@@ -14,6 +11,8 @@ const AdminHomeTabs = () => {
     const navigate = useNavigate();
     const tabCache = useRef({});
     const outlet = useOutlet()
+
+
     useEffect(() => {
         const path = location.pathname;
         if (path === "/"){
@@ -23,7 +22,7 @@ const AdminHomeTabs = () => {
             addTab(path, path);
         }
         setActiveKey(path);
-    }, [location, items]);
+    }, [location]);
 
     const onChange = (newActiveKey) => {
         setActiveKey(newActiveKey);
@@ -59,12 +58,10 @@ const AdminHomeTabs = () => {
         }
         setItems(newPanes);
         setActiveKey(newActiveKey);
-        // Do not delete the content from tabCache
     };
-
     const onEdit = (targetKey, action) => {
         if (action === 'add') {
-            addTab(`newTab${newTabIndex.current++}`, 'New Tab');
+            add();
         } else {
             remove(targetKey);
         }
