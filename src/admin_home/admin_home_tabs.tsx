@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, } from 'react';
 import { Tabs } from 'antd';
 import { useLocation, useNavigate, useOutlet } from 'react-router-dom';
-
+import {} from './admin_home_menu.tsx'
 
 const AdminHomeTabs = () => {
     const [activeKey, setActiveKey] = useState('');
@@ -14,10 +14,13 @@ const AdminHomeTabs = () => {
 
 
     useEffect(() => {
-        const path = location.pathname;
+        let path = location.pathname;
         if (path === "/"){
             return
         }
+
+        // path = "阿萨德"  修改为中文 映射
+
         if (!items.find(item => item.key === path)) {
             addTab(path, path);
         }
@@ -35,6 +38,7 @@ const AdminHomeTabs = () => {
         newPanes.push({ label, key: newActiveKey });
         setItems(newPanes);
         setActiveKey(newActiveKey);
+        console.log(newActiveKey)
         if (!tabCache.current[newActiveKey]) {
             tabCache.current[newActiveKey] = outlet;
         }
