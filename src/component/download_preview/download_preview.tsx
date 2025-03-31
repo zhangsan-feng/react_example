@@ -1,4 +1,4 @@
-import BatchDownload from "../batch_download/batch_download.tsx";
+import BatchDownload from "../download_batch/download_batch.tsx";
 
 
 const DownloadPreview = ()=>{

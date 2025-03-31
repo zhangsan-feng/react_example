@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, } from 'react';
 import { Tabs } from 'antd';
 import { useLocation, useNavigate, useOutlet } from 'react-router-dom';
-import {} from './admin_home_menu.tsx'
+import {MenuItems} from './menu_items.tsx'
 
 const AdminHomeTabs = () => {
     const [activeKey, setActiveKey] = useState('');
@@ -18,7 +18,11 @@ const AdminHomeTabs = () => {
         if (path === "/"){
             return
         }
-
+        for (let i = 0; i < MenuItems.length; i++) {
+            if (MenuItems[i].path == path){
+                path = MenuItems[i].cn
+            }
+        }
         // path = "阿萨德"  修改为中文 映射
 
         if (!items.find(item => item.key === path)) {
@@ -28,6 +32,11 @@ const AdminHomeTabs = () => {
     }, [location]);
 
     const onChange = (newActiveKey) => {
+        for (let i = 0; i < MenuItems.length; i++) {
+            if (MenuItems[i].cn == newActiveKey){
+                newActiveKey = MenuItems[i].path
+            }
+        }
         setActiveKey(newActiveKey);
         navigate(newActiveKey);
     };

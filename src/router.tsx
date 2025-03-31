@@ -1,10 +1,10 @@
 import { createBrowserRouter, RouteObject } from 'react-router-dom';
 import AdminHome from './admin_home/admin_home.tsx'
-import BatchDownload from "./component/batch_download/batch_download.tsx";
+import DownloadBatch from "./component/download_batch/download_batch.tsx";
 import DownloadPreview from "./component/download_preview/download_preview.tsx";
 import DownloadRecord from "./component/download_record/download_record.tsx";
 import DownloadSettings from "./component/download_settings/download_settings.tsx";
-import Download from "./component/download/download.tsx";
+import DownloadWork from "./component/download_work/download_work.tsx";
 
 
 
@@ -14,12 +14,12 @@ const routes: RouteObject[] = [
     element: <AdminHome />,
     children: [
       {
-        path:"/download",
-        element:<Download/>
+        path:"/download_work",
+        element:<DownloadWork/>
       },
       {
-        path:"/batch_download",
-        element:<BatchDownload/>
+        path:"/download_batch",
+        element:<DownloadBatch/>
       },
       {
         path:"/download_settings",

@@ -1,11 +1,11 @@
 
 
 
-const BatchDownload = ()=>{
+const DownloadBatch = ()=>{
     return (
         <div>BatchDownload</div>
     )
 }
 
 
-export default BatchDownload
+export default DownloadBatch
